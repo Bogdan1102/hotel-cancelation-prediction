@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+.env
+.venv
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Project-specific
+# (we DO want data/hotel_bookings.csv committed since reviewers must be able to reproduce)
+# but we exclude large binaries from git history
+*.log
+*.tmp
+.pytest_cache/
