@@ -93,27 +93,13 @@ docker run -it --rm -p 9696:9696 hotel-cancellation
 
 ## Cloud Deployment
 
-The Docker container is compatible with **AWS Elastic Beanstalk** (cap. 5.4 of *Machine Learning Bookcamp*). Deployment steps:
+The service is deployed on Render (free tier) using the Docker container.
 
-```bash
-eb init -p docker hotel-cancellation-predictor
-eb create hotel-cancellation-env
-```
+Live URL: https://hotel-cancelation-prediction.onrender.com
 
-Test the cloud service:
+### Test the cloud service:
 
-```bash
-curl http://hotel-cancellation-env.eba-xxxxxx.eu-west-1.elasticbeanstalk.com/health
-curl -X POST http://hotel-cancellation-env.eba-xxxxxx.eu-west-1.elasticbeanstalk.com/predict \
-  -H "Content-Type: application/json" \
-  -d @sample_request.json
-```
-
-Teardown when finished:
-
-```bash
-eb terminate hotel-cancellation-env --nohangup
-```
+curl https://hotel-cancelation-prediction.onrender.com/health
 
 ## Reproducibility
 
